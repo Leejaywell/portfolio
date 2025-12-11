@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Chen | Senior Frontend Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              handwriting: ['Caveat', 'cursive'],
+              script: ['Sacramento', 'cursive'],
+            },
+            colors: {
+              primary: '#e2e8f0', // Slate 200 (Text)
+              secondary: '#94a3b8', // Slate 400 (Subtext)
+              accent: '#22d3ee', // Cyan 400 (Neon)
+              background: '#020617', // Slate 950 (Page BG)
+              surface: '#0f172a', // Slate 900 (Card/Section BG)
+            },
+            boxShadow: {
+              'neon': '0 0 10px theme("colors.accent"), 0 0 20px theme("colors.accent")',
+              'neon-sm': '0 0 5px theme("colors.accent")',
+              'neon-hover': '0 0 20px theme("colors.accent"), 0 0 40px theme("colors.accent")',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'type-reveal': 'typeReveal 0.1s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              typeReveal: {
+                '0%': { opacity: '0', transform: 'translateY(5px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #020617;
+        color: #e2e8f0;
+        antialiased;
+        overflow-x: hidden;
+      }
+      /* Smooth scrolling for anchor links */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #020617; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #334155; 
+      }
+
+      /* Scroll Reveal Animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        will-change: opacity, transform;
+      }
+      
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-delay-100 { transition-delay: 100ms; }
+      .reveal-delay-200 { transition-delay: 200ms; }
+      .reveal-delay-300 { transition-delay: 300ms; }
+      .reveal-delay-500 { transition-delay: 500ms; }
+
+      /* Handwriting Animation */
+      .handwritten-text {
+        fill: transparent;
+        stroke: #22d3ee; /* accent color */
+        stroke-width: 1.5px;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: draw 3s ease-in-out forwards, fillIn 1s ease-out 2.5s forwards;
+      }
+
+      @keyframes draw {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      @keyframes fillIn {
+        to {
+          fill: rgba(34, 211, 238, 0.1); /* Low opacity accent fill */
+          text-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.560.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.1/",
+    "react/": "https://esm.sh/react@^19.2.1/",
+    "react": "https://esm.sh/react@^19.2.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
